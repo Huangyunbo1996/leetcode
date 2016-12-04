@@ -1,0 +1,22 @@
+#我的第一种解法，利用判断字典的查找速度非常快，可以得到接近O(N)的时间复杂度
+class Solution(object):
+    def findDuplicates(self, nums):
+        dict={}
+        result=[]
+        for i in nums:
+            if not i in dict:
+                dict[i]=1
+            else:
+                result.append(i)
+        return result
+        
+#另一种很巧妙的解决方法，利用表中元素值肯定在表的大小范围内这一特性，将出现过的元素置为负数，然后判断，如果该元素为负数，则肯定是重复元素
+class Solution(object):
+    def findDuplicates(self, nums):
+        result = []
+        for x in nums:
+            if nums[abs(x)-1] < 0:
+                result.append(abs(x))
+            else:
+                nums[abs(x)-1] = -1*nums[abs(x)-1]
+        return result
