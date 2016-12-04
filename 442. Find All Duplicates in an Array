@@ -1,4 +1,4 @@
-#我的第一种解法，利用判断字典的查找速度非常快，可以得到接近O(N)的时间复杂度
+#我的第一种解法，利用字典的查找速度非常快这一特性，可以得到接近O(N)的时间复杂度
 class Solution(object):
     def findDuplicates(self, nums):
         dict={}
